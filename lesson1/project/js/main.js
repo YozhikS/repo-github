@@ -8,6 +8,7 @@ const products = [
 const renderProduct = (title, price, img = './notImg.png') => {
   return `<div class="product-item">
             <h3>${title}</h3>
+            <img src="${img}" alt="${title}" title="${title}" width="150" height="150">
             <p>${price}</p>
             <button class="by-btn">Добавить в корзину</button>
           </div>`;
