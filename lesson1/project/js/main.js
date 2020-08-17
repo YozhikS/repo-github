@@ -5,7 +5,7 @@ const products = [
   {id: 4, title: 'Gamepad', price: 4500},
 ];
 
-const renderProduct = (title, price, img = './notImg.png') => {
+const renderProduct = (title, price, img = './img/notImg.png') => {
   return `<div class="product-item">
             <h3>${title}</h3>
             <img src="${img}" alt="${title}" title="${title}" width="150" height="150">
@@ -16,10 +16,7 @@ const renderProduct = (title, price, img = './notImg.png') => {
 
 const renderProducts = (list) => {
   const productList = list.map((product) => {
-      return renderProduct(product.title, product.price);
-  });
-  productList.forEach(item => {
-    document.querySelector('.products').innerHTML += item;    
+    document.querySelector('.products').innerHTML += renderProduct(product.title, product.price);
   });
 }
 
