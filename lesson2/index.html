@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>home work 2*</title>
+</head>
+<body>
+<script>
+    let ingredientsCost = [
+        {name: 'small', price: 50, calories: 20},
+        {name: 'big', price: 100, calories: 40},
+        {name: 'cheese', price: 10, calories: 20},
+        {name: 'salad', price: 20, calories: 5},
+        {name: 'potatoes', price: 15, calories: 10},
+        {name: 'seasoning', price: 15, calories: 0},
+        {name: 'mayonnaise', price: 20, calories: 5},
+    ];
+
+    class Hamburger {
+        constructor(size, stuffing) {
+            this.size = size;
+            this.stuffing = stuffing;
+            this.topping = [];
+        }
+
+        addTopping(topping) {
+            if (this.topping.lastIndexOf(topping))
+                this.topping.push(topping);
+        }
+
+        removeTopping(topping) {
+            if (this.topping.lastIndexOf(topping) > -1)
+            this.topping.splice(this.topping.lastIndexOf(topping), 1);
+        }
+
+        getToppings() {
+            return this.topping;
+        }
+
+        getSize() {
+            return this.size;
+        }
+
+        getStuffing() {
+            return this.stuffing;
+        }
+
+        calculatePrice() {
+            let sumPrice = 0;
+            for (let ingredient of ingredientsCost)
+                if ((ingredient.name == this.size) 
+                    || (ingredient.name == this.stuffing)
+                    || (this.topping.lastIndexOf(ingredient.name) > -1))
+                    sumPrice += ingredient.price;
+            return sumPrice;
+        }
+        
+        calculateCalories() {
+            let sumCalories = 0;
+            for (let ingredient of ingredientsCost)
+                if ((ingredient.name == this.size) 
+                    || (ingredient.name == this.stuffing)
+                    || (this.topping.lastIndexOf(ingredient.name) > -1))
+                    sumCalories += ingredient.calories;
+            return sumCalories;
+        }
+    }
+
+    const burger = new Hamburger('small', 'cheese');
+</script>
+</body>
+</html>
