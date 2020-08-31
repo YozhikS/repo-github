@@ -262,3 +262,47 @@ const listContext = {
 
 let cart = new Cart();
 let products = new ProductsList(cart);
+
+let validationName = (name = ``) => {
+  if (name.search(/[a-zа-яё]/i) > -1) 
+    return true;
+  return false;
+}
+
+let validationTel = (number = ``) => {
+  if (number.length <= 15)
+    if (number.search(/[+]?\d{1}[(]{1}\d{3}[)]{1}\d{3}-\d{4}/) > -1)
+      return true;
+  return false;
+}
+
+let validationEmail = (emal = ``) => {
+  if (emal.search(/^\w+[.-]?\w+\@[a-z]+\.[a-z]{2}/i) == -1)
+    return false;
+  return true;
+}
+
+let validationMessage = (message = ``) => {
+  if (message.match(/\b[a-zа-яё]+\B/igm).length < 2)
+    return false;
+  return true;
+}
+
+let validation = () => {
+  document.querySelector('.btn-send').addEventListener('click', () => {
+    let msg = ``;
+    if (!validationName(document.getElementById("in_name").value))
+      msg += "Имя ";
+    if (!validationTel(document.getElementById("in_tel").value))
+      msg += "Номер телефона ";
+    if (!validationEmail(document.getElementById("in_email").value))
+      msg += "Email ";
+    if (!validationMessage(document.getElementById("in_message").value))
+      msg += "Сообщения ";
+    if (msg.length > 0)
+      msg = `Неверно заполнен ${msg}`;
+    document.querySelector('.msg-valid').textContent = msg;
+  });
+}
+
+validation();

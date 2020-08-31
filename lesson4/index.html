@@ -22,6 +22,8 @@ Two: 'It's their anniversary.'
 One: 'That's great. Well, you better get going. You don't want to be late.'
 Two: 'I'll see you next time.'
 One: 'Sure.' Bye.'`;
+    console.log(`Задание 1:\n${str.replace(/'/gm, '"')}`);
+    console.log(`Задание 2:\n${str.replace(/'\B/gm, '"').replace(/\s'/gm, ' "')}`);
 </script>
 </body>
 </html>
