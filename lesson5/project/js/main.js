@@ -6,7 +6,10 @@ const app = new Vue({
     catalogUrl: '/catalogData.json',
     products: [],
     imgCatalog: 'https://placehold.it/200x150',
+    imgCart: 'https://placehold.it/50x100',
     searchLine: '',
+    allProducts: [],
+    isVisibleCart: false,
   },
   methods: {
     getJson(url){
@@ -16,22 +19,48 @@ const app = new Vue({
           console.log(error);
         })
     },
+    // перестарался сделал не по заданию метод добавления
     addProduct(product){
-      console.log(product.id_product);
+      this.getJson(`${API}/addToBasket.json`)
+      .then(data => {
+        if(data.result === 1){
+          let find = this.allProducts.find(el => el.id_product === product.id_product);
+          if(find){
+            find.quantity++;
+          } else {
+            let newProduct = {
+              id_product: product.id_product,
+              price: product.price,
+              product_name: product.product_name,
+              quantity: 1
+            };
+            this.allProducts.push(newProduct);
+          }
+        } else {
+          alert('Error');
+        }
+      });
     },
-    filterGoods(filter = ``){
-      let filterReg = new RegExp(filter,'i')  // создание регулярки
-      this.products = []; // очистка каталога
+    // имитация загрузки данных с сервера только фильтрация происходит у клиента
+    filterGoods(){
+      // создание регулярки
+      let filterReg = new RegExp(this.searchLine,'i')
+      // очистка каталога
+      this.products = [];
       this.getJson(`${API + this.catalogUrl}`)
       .then(data => {
         for(let el of data){
-          if (!filter || filterReg.test(el.product_name))  // проверка наличие фильтра или проверка на совпадение строк
+          // проверка на соответствие фильтру
+          if (filterReg.test(el.product_name))
               this.products.push(el);
         }
       });
     }
   },
+  computed: {
+  },
   created(){
-    this.filterGoods(''); // вызов фильтра с пустым значением поиска
+    // вызов фильтра для построения каталога
+    this.filterGoods();
   },
 });
