@@ -9,6 +9,7 @@ const change = (cart, req) => {
 };
 const del = (cart, req) => {
   const find = cart.contents.find(el => el.id_product === +req.params.id);
+  // cart.contents.splice(find ,1);
   find.quantity += req.body.quantity;
   return JSON.stringify(cart, null, 4);
 };
@@ -16,4 +17,5 @@ const del = (cart, req) => {
 module.exports = {
   add,
   change,
+  del,
 };

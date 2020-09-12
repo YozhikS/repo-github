@@ -1,0 +1,112 @@
+[
+    {
+        "time": "09 Sep 2020, 7:39:55 pm",
+        "prod_name": "Ноутбук",
+        "action": "add"
+    },
+    {
+        "time": "09 Sep 2020, 7:39:55 pm",
+        "prod_name": "Gamepad",
+        "action": "add"
+    },
+    {
+        "time": "09 Sep 2020, 7:40:08 pm",
+        "prod_name": "Gamepad",
+        "action": "remove"
+    },
+    {
+        "time": "09 Sep 2020, 7:40:08 pm",
+        "prod_name": "Ноутбук",
+        "action": "remove"
+    },
+    {
+        "time": "09 Sep 2020, 8:11:58 pm",
+        "prod_name": "Keyboard",
+        "action": "add"
+    },
+    {
+        "time": "09 Sep 2020, 8:11:59 pm",
+        "prod_name": "Gamepad",
+        "action": "add"
+    },
+    {
+        "time": "09 Sep 2020, 8:12:23 pm",
+        "prod_name": "Keyboard",
+        "action": "remove"
+    },
+    {
+        "time": "09 Sep 2020, 8:12:24 pm",
+        "prod_name": "Gamepad",
+        "action": "remove"
+    },
+    {
+        "time": "09 Sep 2020, 8:13:18 pm",
+        "prod_name": "Keyboard",
+        "action": "add"
+    },
+    {
+        "time": "09 Sep 2020, 8:13:22 pm",
+        "prod_name": "Keyboard",
+        "action": "change"
+    },
+    {
+        "time": "09 Sep 2020, 8:14:38 pm",
+        "prod_name": "Keyboard",
+        "action": "change"
+    },
+    {
+        "time": "09 Sep 2020, 8:14:38 pm",
+        "prod_name": "Keyboard",
+        "action": "remove"
+    },
+    {
+        "time": "09 Sep 2020, 8:15:55 pm",
+        "prod_name": "Keyboard",
+        "action": "add"
+    },
+    {
+        "time": "09 Sep 2020, 8:15:57 pm",
+        "prod_name": "Keyboard",
+        "action": "change"
+    },
+    {
+        "time": "09 Sep 2020, 8:15:58 pm",
+        "prod_name": "Keyboard",
+        "action": "change"
+    },
+    {
+        "time": "09 Sep 2020, 8:16:00 pm",
+        "prod_name": "Keyboard",
+        "action": "change"
+    },
+    {
+        "time": "09 Sep 2020, 8:16:01 pm",
+        "prod_name": "Keyboard",
+        "action": "change"
+    },
+    {
+        "time": "09 Sep 2020, 8:16:01 pm",
+        "prod_name": "Keyboard",
+        "action": "remove"
+    },
+    {
+        "time": "09 Sep 2020, 8:16:07 pm",
+        "prod_name": "Keyboard",
+        "action": "add"
+    },
+    {
+        "time": "09 Sep 2020, 8:16:07 pm",
+        "prod_name": "Keyboard",
+        "action": "change"
+    },
+    {
+        "time": "09 Sep 2020, 8:16:11 pm",
+        "prod_name": "Keyboard",
+        "action": "change"
+    },
+    {
+        "time": "09 Sep 2020, 8:16:16 pm",
+        "prod_name": "Keyboard",
+        "action": "remove"
+    }
+]
